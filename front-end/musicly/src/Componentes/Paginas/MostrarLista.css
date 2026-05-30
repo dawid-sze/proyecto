@@ -1,0 +1,102 @@
+/* =====================================================
+   MostrarLista.css — páginas de listas por género y usuario
+   ===================================================== */
+
+.lista-page {
+  width: 100%;
+}
+
+/* ── Card contenedor ─────────────────────────────────── */
+.lista-card {
+  background: #fff;
+  border: 1px solid #DDE6F5;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* ── Header con selector ─────────────────────────────── */
+.lista-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #EAF0F8;
+  background: #FAFCFF;
+}
+
+.lista-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6C8EBF;
+  font-size: 16px;
+}
+
+.lista-select {
+  border: 1px solid #D0DCF0;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 13px;
+  color: #344563;
+  padding: 0.4rem 0.75rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.18s;
+}
+
+.lista-select:focus { border-color: #6C8EBF; }
+
+.lista-titulo {
+  font-size: 13px;
+  font-weight: 500;
+  color: #3B5278;
+}
+
+/* ── Grid de canciones: 3 por fila, 200px cada una ──── */
+.lista-canciones-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
+  gap: 14px;
+  padding: 1.25rem;
+  justify-content: center;
+}
+
+/* ── Paginación ──────────────────────────────────────── */
+.paginacion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  border-top: 1px solid #EAF0F8;
+}
+
+.paginacion-info {
+  font-size: 12px;
+  color: #8FA3BC;
+}
+
+.paginacion-btns {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.btn-pag {
+  background: #EAF0F8;
+  color: #6C8EBF;
+  border: none;
+  border-radius: 8px;
+  padding: 0.35rem 0.75rem;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.13s;
+}
+
+.btn-pag:hover { background: #DDE8F5; }
+.btn-pag:disabled { opacity: 0.4; cursor: default; }
+.btn-pag.active { background: #E2711D; color: #fff; }

@@ -1,0 +1,143 @@
+/* =====================================================
+   MostrarBanda.css — vista de detalle de banda
+   ===================================================== */
+
+/* ── Cabecera de banda ───────────────────────────────── */
+.banda-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 1.5rem;
+}
+
+.banda-avatar {
+  width: 42px;
+  height: 42px;
+  background: #EAF0F8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6C8EBF;
+  font-size: 18px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.banda-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.banda-titulo {
+  font-size: 20px;
+  font-weight: 500;
+  color: #3B5278;
+}
+
+/* ── Card del disco ──────────────────────────────────── */
+.disco-card {
+  background: #fff;
+  border: 1px solid #DDE6F5;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.disco-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #EAF0F8;
+  background: #FAFCFF;
+}
+
+.disco-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #EAF0F8;
+  flex-shrink: 0;
+}
+
+.disco-nombre {
+  font-size: 15px;
+  font-weight: 500;
+  color: #3B5278;
+}
+
+.disco-meta {
+  font-size: 12px;
+  color: #8FA3BC;
+}
+
+/* ── Grid de canciones: 3 por fila ───────────────────── */
+.canciones-row {
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
+  gap: 14px;
+  padding: 1.25rem;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .canciones-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .canciones-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Paginación ──────────────────────────────────────── */
+.paginacion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  border-top: 1px solid #EAF0F8;
+}
+
+.paginacion-info {
+  font-size: 12px;
+  color: #8FA3BC;
+}
+
+.paginacion-btns {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.btn-pag {
+  background: #EAF0F8;
+  color: #6C8EBF;
+  border: none;
+  border-radius: 8px;
+  padding: 0.35rem 0.75rem;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.13s;
+}
+
+.btn-pag:hover { background: #DDE8F5; }
+
+.btn-pag:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.btn-pag.active {
+  background: #E2711D;
+  color: #fff;
+}

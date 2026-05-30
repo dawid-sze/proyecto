@@ -1,0 +1,81 @@
+/* =====================================================
+   Inicio.css — página de inicio (sin sliders)
+   ===================================================== */
+
+.seccion {
+  margin-bottom: 2rem;
+}
+
+/* ── Cabecera de sección ─────────────────────────────── */
+.seccion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.seccion-titulo {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3B5278;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.seccion-titulo i { color: #E2711D; font-size: 16px; }
+
+/* ── Grid de canciones ───────────────────────────────── */
+.canciones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+/* ── Grid de bandas ──────────────────────────────────── */
+.bandas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.banda-card {
+  background: #fff;
+  border: 1px solid #DDE6F5;
+  border-radius: 12px;
+  padding: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: border-color 0.14s, background 0.14s;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.banda-card:hover { border-color: #B5D0EF; background: #FAFCFF; }
+
+.banda-avatar-img {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  min-height: 38px;
+  max-width: 38px;
+  max-height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #EAF0F8;
+  flex-shrink: 0;
+  display: block;
+}
+
+.banda-nombre {
+  font-size: 12px;
+  font-weight: 500;
+  color: #3B5278;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.banda-pais { font-size: 11px; color: #8FA3BC; }

@@ -1,0 +1,92 @@
+.discos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.disco {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.disco-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.disco-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.disco-portada {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.disco-nombre {
+  font-weight: 600;
+  font-size: 14px;
+  color: #222;
+}
+
+.canciones {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cancion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.cancion:hover {
+  background: #f5f5f5;
+}
+
+.cancion-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cancion-portada {
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+
+.cancion-nombre {
+  font-size: 13px;
+  color: #444;
+}
+
+/* Botón eliminar */
+.btn-delete {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: #999;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  color: #e74c3c;
+}
+
+.btn-delete.small {
+  font-size: 14px;
+}

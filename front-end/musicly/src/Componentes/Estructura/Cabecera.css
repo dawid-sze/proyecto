@@ -1,0 +1,77 @@
+/* =====================================================
+   Cabecera.css — topbar principal
+   ===================================================== */
+
+.cabecera {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.65rem 1.25rem;
+  background: #ffffff;
+  border-bottom: 1px solid #DDE6F5;
+  flex-shrink: 0;
+}
+
+/* ── Hamburguesa (solo móvil) ───────────────────────── */
+.cabecera-hamburger {
+  display: none;
+  background: none;
+  border: 1px solid #DDE6F5;
+  border-radius: 8px;
+  color: #6C8EBF;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 7px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: background 0.13s;
+}
+
+.cabecera-hamburger:hover { background: #EAF0F8; }
+
+/* ── Buscador ────────────────────────────────────────── */
+.cabecera-buscador {
+  flex: 1;
+  max-width: 340px;
+}
+
+/* ── Usuario ─────────────────────────────────────────── */
+.cabecera-usuario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.cabecera-nombre {
+  font-size: 13px;
+  font-weight: 500;
+  color: #5A6E8A;
+  white-space: nowrap;
+}
+
+.cabecera-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #EAF0F8;
+  cursor: pointer;
+  transition: border-color 0.15s;
+  display: block;
+}
+
+.cabecera-avatar:hover { border-color: #6C8EBF; }
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cabecera-hamburger {
+    display: flex;
+  }
+
+  .cabecera-nombre {
+    display: none;
+  }
+}

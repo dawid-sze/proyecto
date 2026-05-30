@@ -1,0 +1,172 @@
+/* =====================================================
+   Reproductor opción 3 — acento naranja lateral
+   Importar DESPUÉS de react-h5-audio-player/lib/styles.css
+   ===================================================== */
+
+.reproductor-fijo {
+  background: #ffffff;
+  border-top: 1px solid #DDE6F5;
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* ── Portada con acento naranja izquierdo ───────────── */
+.reproductor-portada-wrap {
+  flex-shrink: 0;
+  border-left: 3px solid #E2711D;
+  border-radius: 0 8px 8px 0;
+  overflow: hidden;
+  width: 42px;
+  height: 42px;
+}
+
+.reproductor-portada {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Título ─────────────────────────────────────────── */
+.reproductor-meta {
+  width: 160px;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.reproductor-titulo {
+  font-size: 13px;
+  font-weight: 500;
+  color: #3B5278;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+/* ── Player ocupa el resto ──────────────────────────── */
+.reproductor-player {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Wrapper del player ─────────────────────────────── */
+.rhap_container {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+/* ── Barra de progreso arriba ───────────────────────── */
+.rhap_progress-section {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  order: 1 !important;
+  margin-bottom: 0 !important;
+}
+
+.rhap_progress-bar-show-download {
+  background: #EAF0F8 !important;
+  border-radius: 99px !important;
+  height: 3px !important;
+}
+
+.rhap_progress-bar {
+  background: #EAF0F8 !important;
+  border-radius: 99px !important;
+  height: 3px !important;
+}
+
+.rhap_progress-filled {
+  background: #E2711D !important;
+  border-radius: 99px !important;
+}
+
+.rhap_progress-indicator {
+  background: #E2711D !important;
+  width: 11px !important;
+  height: 11px !important;
+  top: -4px !important;
+  border: 2px solid #fff !important;
+  box-shadow: 0 0 0 1px #E2711D !important;
+}
+
+.rhap_time {
+  font-size: 10px !important;
+  color: #8FA3BC !important;
+  flex-shrink: 0 !important;
+}
+
+/* ── Controles abajo ────────────────────────────────── */
+.rhap_controls-section {
+  display: flex !important;
+  align-items: center !important;
+  order: 2 !important;
+  margin-top: 0 !important;
+  gap: 8px !important;
+  justify-content: space-between !important;
+}
+
+.rhap_main-controls {
+  display: flex !important;
+  align-items: center !important;
+  gap: 2px !important;
+}
+
+.rhap_main-controls-button,
+.rhap_skip-button {
+  color: #6C8EBF !important;
+  font-size: 18px !important;
+  width: 30px !important;
+  height: 30px !important;
+  transition: color 0.15s !important;
+}
+
+.rhap_main-controls-button:hover,
+.rhap_skip-button:hover { color: #4a6fa5 !important; }
+
+/* ── Botón Play/Pause naranja ───────────────────────── */
+.rhap_play-pause-button {
+  background: #E2711D !important;
+  color: #ffffff !important;
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 18px !important;
+  margin: 0 2px !important;
+  transition: background 0.15s, transform 0.1s !important;
+  box-shadow: none !important;
+}
+
+.rhap_play-pause-button:hover { background: #C45E0E !important; transform: scale(1.05) !important; }
+.rhap_play-pause-button:active { transform: scale(0.97) !important; }
+
+/* ── Volumen ─────────────────────────────────────────── */
+.rhap_volume-section {
+  flex-shrink: 0 !important;
+  width: 75px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.rhap_volume-bar {
+  background: #EAF0F8 !important;
+  border-radius: 99px !important;
+  height: 3px !important;
+}
+
+.rhap_volume-indicator { background: #6C8EBF !important; }
+.rhap_volume-filled { background: #6C8EBF !important; border-radius: 99px !important; }
+.rhap_volume-button { color: #8FA3BC !important; font-size: 14px !important; }
+.rhap_additional-controls { display: none !important; }

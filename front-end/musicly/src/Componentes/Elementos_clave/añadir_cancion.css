@@ -1,0 +1,21 @@
+.hidden {
+  display: none;
+}
+
+.dropdown {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-top: 5px;
+  z-index: 100;
+}
+
+.dropdown div {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dropdown div:hover {
+  background: #eee;
+}

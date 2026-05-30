@@ -1,0 +1,316 @@
+/* =====================================================
+   Cancion.css — card de canción + dropdown lista + comentarios
+   ===================================================== */
+
+/* ── Card ────────────────────────────────────────────── */
+.cancion-card {
+  background: #fff;
+  border: 1px solid #DDE6F5;
+  border-radius: 14px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s;
+  position: relative;
+}
+
+.cancion-card:hover { border-color: #B5D0EF; }
+
+/* ── Portada ─────────────────────────────────────────── */
+.cancion-portada-wrap {
+  position: relative;
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
+}
+
+.cancion-portada-wrap img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.btn-like {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  background: rgba(255, 255, 255, 0.88);
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.13s;
+}
+
+.btn-like:hover { background: #fff; }
+
+/* ── Cuerpo ──────────────────────────────────────────── */
+.cancion-body {
+  padding: 0.65rem 0.75rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.cancion-titulo {
+  font-size: 12px;
+  font-weight: 500;
+  color: #3B5278;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cancion-actions {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+/* ── Botón reproducir ────────────────────────────────── */
+.btn-reproducir {
+  background: #E2711D;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  line-height: 1;
+  text-indent: 2px; /* compensa asimetría del triángulo ▶ */
+}
+
+.btn-reproducir:hover { background: #C45E0E; transform: scale(1.07); }
+
+/* ── Botones icono genéricos ─────────────────────────── */
+.btn-icon {
+  background: #EAF0F8;
+  color: #6C8EBF;
+  border: none;
+  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.13s, color 0.13s;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.btn-icon:hover { background: #DDE8F5; }
+.btn-icon.danger:hover { background: #FCEAEA; color: #E05C68; }
+
+/* ── Footer / comentarios ────────────────────────────── */
+.cancion-footer {
+  border-top: 1px solid #EAF0F8;
+  padding: 0.45rem 0.75rem;
+}
+
+.btn-comentarios {
+  background: none;
+  border: none;
+  font-size: 11px;
+  color: #8FA3BC;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.13s;
+}
+
+.btn-comentarios:hover { color: #5A6E8A; }
+
+/* ── Panel de comentarios ────────────────────────────── */
+.comentarios-panel-wrap {
+  margin-top: 6px;
+}
+
+.comentarios-lista {
+  max-height: 130px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 6px;
+}
+
+.comentarios-empty {
+  font-size: 11px;
+  color: #8FA3BC;
+  margin: 0;
+}
+
+.comentario-item {
+  background: #F4F7FC;
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem;
+  font-size: 11px;
+  color: #5A6E8A;
+}
+
+.comentario-autor {
+  font-weight: 500;
+  color: #3B5278;
+  margin-bottom: 1px;
+  font-size: 11px;
+}
+
+.comentario-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.comentario-input {
+  width: 100%;
+  border: 1px solid #D0DCF0;
+  border-radius: 8px;
+  font-size: 12px;
+  padding: 0.35rem 0.55rem;
+  outline: none;
+  color: #344563;
+  background: #FAFCFF;
+  resize: none;
+  transition: border-color 0.18s;
+  font-family: inherit;
+}
+
+.comentario-input:focus { border-color: #6C8EBF; }
+
+.comentario-form-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.btn-enviar {
+  background: #6C8EBF;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  font-size: 11px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-enviar:hover { background: #4a6fa5; }
+
+.btn-limpiar-comentario {
+  background: #EAF0F8;
+  color: #6C8EBF;
+  border: none;
+  border-radius: 7px;
+  font-size: 11px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  transition: background 0.13s;
+}
+
+.btn-limpiar-comentario:hover { background: #DDE8F5; }
+
+/* ── Dropdown añadir a lista ─────────────────────────── */
+.lista-dropdown-wrap {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.lista-dropdown {
+  background: #fff;
+  border: 1px solid #DDE6F5;
+  border-radius: 12px;
+  z-index: 9999;
+  min-width: 170px;
+  box-shadow: 0 4px 16px rgba(108, 142, 191, 0.12);
+}
+
+.lista-dropdown-items {
+  max-height: 160px;
+  overflow-y: auto;
+  border-radius: 12px 12px 0 0;
+}
+
+.lista-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 0.85rem;
+  font-size: 12px;
+  color: #3B5278;
+  cursor: pointer;
+  border-bottom: 1px solid #EAF0F8;
+  transition: background 0.12s;
+}
+
+.lista-dropdown-item:last-of-type { border-bottom: none; }
+.lista-dropdown-item:hover { background: #F4F7FC; }
+
+.lista-dropdown-empty {
+  font-size: 12px;
+  color: #8FA3BC;
+  padding: 0.5rem 0.85rem;
+  margin: 0;
+}
+
+.lista-dropdown-nueva {
+  border-top: 1px solid #EAF0F8;
+  padding: 0.6rem 0.85rem;
+  background: #FAFCFF;
+}
+
+/* Overrides para el form dentro del dropdown */
+.lista-dropdown-nueva label { display: none; }
+
+.lista-dropdown-nueva input[type="text"] {
+  width: 100%;
+  border: 1px solid #D0DCF0;
+  border-radius: 8px;
+  font-size: 12px;
+  padding: 0.35rem 0.6rem;
+  margin-bottom: 5px;
+  outline: none;
+  color: #344563;
+  background: #FAFCFF;
+}
+
+.lista-dropdown-nueva input[type="text"]:focus {
+  border-color: #6C8EBF;
+}
+
+.lista-dropdown-nueva input[type="button"] {
+  width: 100%;
+  background: #E2711D;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.35rem;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.lista-dropdown-nueva input[type="button"]:hover { background: #C45E0E; }
+
+/* ── Error ───────────────────────────────────────────── */
+.error-msg {
+  font-size: 11px;
+  color: #E05C68;
+  margin-top: 2px;
+}
