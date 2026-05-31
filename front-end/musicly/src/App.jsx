@@ -12,7 +12,7 @@ function AppContent({ reproducirLista, colaActual, indiceActual, siguienteCancio
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const rutasSinLayout = ["/login", "/Registro"];
+  const rutasSinLayout = ["/login", "/registro"];
   const mostrarLayout = !rutasSinLayout.includes(location.pathname);
 
   return (
