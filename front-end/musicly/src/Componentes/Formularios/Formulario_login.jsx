@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useContext } from "react";
 import { AuthContext } from "../../Contexto/ProveedorAutentificacion.jsx";
+import logo from '../../assets/imagenes/musicly-logo.png';
 import { Link } from "react-router-dom";
 import './formularios.css';
 
@@ -19,7 +20,7 @@ const FormularioLogin = () => {
                 <div className="form-card login-card">
 
                     <div className="login-logo">
-                        <i className="ti ti-music" aria-hidden="true"></i>
+                        <img src={logo} alt="Musicly" />
                     </div>
 
                     <h2>Bienvenido</h2>
