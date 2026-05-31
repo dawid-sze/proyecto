@@ -196,7 +196,7 @@ const FormularioCreacion = () => {
                                 }}
                             />
                         </div>
-                        <div>
+                        <div><br />
                             <input
                                 type="button"
                                 value="Limpiar formulario"
