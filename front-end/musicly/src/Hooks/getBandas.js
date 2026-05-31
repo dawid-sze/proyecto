@@ -2,7 +2,7 @@
 
    export const listarAPI = async () => {
         try {
-            const respuesta = await fetch("http://localhost/api/usuarios");
+            const respuesta = await fetch("https://musicly.es/api/usuarios");
             let datos;
             if (respuesta) {
                 datos = await respuesta.json();

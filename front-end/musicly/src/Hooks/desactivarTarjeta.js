@@ -1,6 +1,6 @@
 export const desactivarTarjeta = async (id) => {
     try {
-        let respuesta = await fetch(`http://localhost/api/tarjetas/${id}/desactivar`, {
+        let respuesta = await fetch(`https://musicly.es/api/tarjetas/${id}/desactivar`, {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem("site")}`,

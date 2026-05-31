@@ -4,7 +4,7 @@
     export const estadisticasGenero = async (id) => {
 
         try {
-            let respuesta = await fetch(`http://localhost/api/reproduccionesPorGenero`, {
+            let respuesta = await fetch(`https://musicly.es/api/reproduccionesPorGenero`, {
                 method: "POST",
                 headers: {
                    "Authorization": `Bearer ${localStorage.getItem("site")}`

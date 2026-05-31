@@ -2,7 +2,7 @@
 
    export const listarGeneros = async () => {
         try {
-            const respuesta = await fetch("http://localhost/api/generos");
+            const respuesta = await fetch("https://musicly.es/api/generos");
             let datos;
             if (respuesta) {
                 datos = await respuesta.json();

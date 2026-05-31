@@ -1,6 +1,6 @@
 export const activarTarjeta = async (id) => {
     try {
-        let respuesta = await fetch(`http://localhost/api/tarjetas/${id}/activar`, {
+        let respuesta = await fetch(`https://musicly.es/api/tarjetas/${id}/activar`, {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem("site")}`,

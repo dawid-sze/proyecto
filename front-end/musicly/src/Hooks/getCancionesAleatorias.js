@@ -2,7 +2,7 @@
 
   export const listarCancionesAleatorias = async () => {
         try {
-            const respuesta = await fetch("http://localhost/api/aleatorio");
+            const respuesta = await fetch("https://musicly.es/api/aleatorio");
             let datos;
             if (respuesta) {
                 datos = await respuesta.json();

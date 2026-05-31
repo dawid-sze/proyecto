@@ -2,7 +2,7 @@
 
     export const obtenerUsuario = async (token) => {
         try {
-            const respuesta = await fetch("http://localhost/api/usuario", {
+            const respuesta = await fetch("https://musicly.es/api/usuario", {
                 method: "GET", // o POST según tu ruta
                 headers: {
                     "Content-Type": "application/json",

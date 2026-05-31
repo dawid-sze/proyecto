@@ -6,7 +6,7 @@
         console.log(pair[0] + ': ' + pair[1]);
     }
         try {
-            let respuesta = await fetch("http://localhost/api/canciones", {
+            let respuesta = await fetch("https://musicly.es/api/canciones", {
                 method: "POST",
                  headers: {
                    "Authorization": `Bearer ${localStorage.getItem("site")}`

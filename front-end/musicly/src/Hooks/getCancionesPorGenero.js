@@ -2,7 +2,7 @@
 
   export const listarCancionesPorGenero = async (identificador) => {
         try {
-            const respuesta = await fetch(`http://localhost/api/genero/${identificador}`);
+            const respuesta = await fetch(`https://musicly.es/api/genero/${identificador}`);
             let datos;
             if (respuesta) {
                 datos = await respuesta.json();

@@ -3,7 +3,7 @@
 
 export const eliminarCancion = async (identificador) => {
     try {
-        const respuesta = await fetch(`http://localhost/api/canciones/${identificador}`, {
+        const respuesta = await fetch(`https://musicly.es/api/canciones/${identificador}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json;charset=utf-8"

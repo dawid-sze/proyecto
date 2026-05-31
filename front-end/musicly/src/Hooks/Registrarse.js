@@ -6,7 +6,7 @@
         console.log(pair[0] + ': ' + pair[1]);
     }
         try {
-            let respuesta = await fetch("http://localhost/api/usuarios", {
+            let respuesta = await fetch("https://musicly.es/api/usuarios", {
                 method: "POST",
                 body: objeto
             });

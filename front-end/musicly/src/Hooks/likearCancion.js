@@ -4,7 +4,7 @@
     export const likearCancion = async (id) => {
 
         try {
-            let respuesta = await fetch(`http://localhost/api/likear_cancion/${id}`, {
+            let respuesta = await fetch(`https://musicly.es/api/likear_cancion/${id}`, {
                 method: "POST",
                 headers: {
                    "Authorization": `Bearer ${localStorage.getItem("site")}`

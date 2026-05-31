@@ -4,7 +4,7 @@
     export const eliminarCancionLista = async (lista_id, cancion_id) => {
 
         try {
-            let respuesta = await fetch(`http://localhost/api/eliminarCancionDeLista/${lista_id}/${cancion_id}`, {
+            let respuesta = await fetch(`https://musicly.es/api/eliminarCancionDeLista/${lista_id}/${cancion_id}`, {
                 method: "DELETE",
                 headers: {
                    "Authorization": `Bearer ${localStorage.getItem("site")}`

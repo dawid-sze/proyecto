@@ -4,7 +4,7 @@
     export const suscribirse = async (suscripcion) => {
         console.log(suscripcion)
         try {
-            let respuesta = await fetch(`http://localhost/api/suscribirse`, {
+            let respuesta = await fetch(`https://musicly.es/api/suscribirse`, {
                 method: "POST",
                 headers: {
                    "Authorization": `Bearer ${localStorage.getItem("site")}`,

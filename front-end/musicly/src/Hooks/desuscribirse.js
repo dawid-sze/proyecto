@@ -4,7 +4,7 @@
     export const desuscribirse = async () => {
 
         try {
-            let respuesta = await fetch(`http://localhost/api/desuscribirse`, {
+            let respuesta = await fetch(`https://musicly.es/api/desuscribirse`, {
                 method: "POST",
                 headers: {
                    "Authorization": `Bearer ${localStorage.getItem("site")}`

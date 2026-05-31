@@ -4,7 +4,7 @@
 export const modificarAPI = async (objeto) => {
     const id = objeto.get('id');
     try {
-        const respuesta = await fetch(`http://localhost/api/usuarios/${id}`, {
+        const respuesta = await fetch(`https://musicly.es/api/usuarios/${id}`, {
             method: "POST", // Se envía como POST para que PHP pueda leer los archivos
             body: objeto,
             headers: {

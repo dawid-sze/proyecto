@@ -3,7 +3,7 @@
 
     export const comentarCancion = async (comentario,id) => {
         try {
-            let respuesta = await fetch(`http://localhost/api/comentar/${id}`, {
+            let respuesta = await fetch(`https://musicly.es/api/comentar/${id}`, {
                 method: "POST",
                 headers: {
                    "Authorization": `Bearer ${localStorage.getItem("site")}`,

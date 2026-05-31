@@ -7,7 +7,7 @@
 
 export const borrarAPI = async (identificador) => {
     try {
-        const respuesta = await fetch(`http://localhost/api/usuarios/${identificador}`, {
+        const respuesta = await fetch(`https://musicly.es/api/usuarios/${identificador}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json;charset=utf-8",

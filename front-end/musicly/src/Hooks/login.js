@@ -1,7 +1,7 @@
 
     export const loginAction = async (data) => {
     try {
-      const response = await fetch("http://localhost/api/login", {
+      const response = await fetch("https://musicly.es/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -2,7 +2,7 @@
 
    export const listarPorGeneroMasEscuchado = async (identificador) => {
         try {
-            const respuesta = await fetch(`http://localhost/api/recomendacion/${identificador}`);
+            const respuesta = await fetch(`https://musicly.es/api/recomendacion/${identificador}`);
             let datos;
             if (respuesta) {
                 datos = await respuesta.json();

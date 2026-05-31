@@ -4,7 +4,7 @@
     export const aniadirCancionLista = async (lista_id, cancion_id) => {
 
         try {
-            let respuesta = await fetch(`http://localhost/api/aniadirCancion/${lista_id}/${cancion_id}`, {
+            let respuesta = await fetch(`https://musicly.es/api/aniadirCancion/${lista_id}/${cancion_id}`, {
                 method: "POST",
                 headers: {
                    "Authorization": `Bearer ${localStorage.getItem("site")}`

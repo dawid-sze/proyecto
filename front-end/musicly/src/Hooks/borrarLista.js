@@ -4,7 +4,7 @@
 
   export const eliminarLista = async (identificador) => {
         try {
-            const respuesta = await fetch(`http://localhost/api/listas/${identificador}`, {
+            const respuesta = await fetch(`https://musicly.es/api/listas/${identificador}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json;charset=utf-8"
