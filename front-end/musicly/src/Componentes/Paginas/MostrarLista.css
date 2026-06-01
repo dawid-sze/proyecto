@@ -106,9 +106,10 @@
 /* ── Móvil ───────────────────────────────────────────── */
 @media (max-width: 640px) {
   .lista-canciones-grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0.75rem;
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 0.75rem !important;
+    gap: 10px !important;
+    justify-content: stretch !important;
   }
 
   .lista-card-header {
@@ -131,6 +132,6 @@
 
 @media (max-width: 400px) {
   .lista-canciones-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 }
