@@ -30,111 +30,111 @@ const UsuarioDetalleElemento = ({ datos }) => {
                     {esPremium ? "Premium" : "Básico"}
                 </span>
 
-                <div className="suscripcion-wrap">
-                    <button
-                        className="btn-suscripcion"
-                        onClick={() => setMostrarSuscripcion(!mostrarSuscripcion)}
-                    >
-                        Suscripción ▾
-                    </button>
-                    {mostrarSuscripcion && (
-                        <div className="suscripcion-dropdown">
-                            <CrearSuscripcion />
-                        </div>
-                    )}
-                </div>
-
-                <button className="btn-logout" onClick={logOut}>
-                    <i className="ti ti-logout" aria-hidden="true"></i>
-                    Cerrar sesión
+                <button
+                    className="btn-suscripcion"
+                    onClick={() => navigate("/suscribirse")}
+                >
+                    <i className="ti ti-credit-card" aria-hidden="true"></i>
+                    Gestionar suscripción
                 </button>
+                {mostrarSuscripcion && (
+                    <div className="suscripcion-dropdown">
+                        <CrearSuscripcion />
+                    </div>
+                )}
             </div>
 
-            {/* ── Panel derecho ── */}
-            <div className="usuario-main">
-                <div className="usuario-main-header">
-                    <div className="usuario-section-title">Datos de la cuenta</div>
-                    <button
-                        className="btn-editar"
-                        onClick={() => setMostrarEditar(v => !v)}
-                    >
-                        {mostrarEditar ? "Cancelar" : "Editar perfil"}
-                    </button>
+            <button className="btn-logout" onClick={logOut}>
+                <i className="ti ti-logout" aria-hidden="true"></i>
+                Cerrar sesión
+            </button>
+        </div>
+
+            {/* ── Panel derecho ── */ }
+    <div className="usuario-main">
+        <div className="usuario-main-header">
+            <div className="usuario-section-title">Datos de la cuenta</div>
+            <button
+                className="btn-editar"
+                onClick={() => setMostrarEditar(v => !v)}
+            >
+                {mostrarEditar ? "Cancelar" : "Editar perfil"}
+            </button>
+        </div>
+
+        {mostrarEditar ? (
+            <div className="usuario-editar-wrap">
+                <FormularioModificacion bandaModificar={datos} />
+            </div>
+        ) : (
+            <>
+                <div className="usuario-datos">
+                    <div className="dato-row">
+                        <span className="dato-label">Representante</span>
+                        <span className="dato-value">{datos.nombre} {datos.apellidos}</span>
+                    </div>
+                    <div className="dato-row">
+                        <span className="dato-label">Rol</span>
+                        <span className="dato-value">
+                            <span className="badge-rol">{datos.rol}</span>
+                        </span>
+                    </div>
+                    <div className="dato-row">
+                        <span className="dato-label">País</span>
+                        <span className="dato-value">
+                            {datos.pais?.nombre_pais || "—"}
+                        </span>
+                    </div>
                 </div>
 
-                {mostrarEditar ? (
-                    <div className="usuario-editar-wrap">
-                        <FormularioModificacion bandaModificar={datos} />
-                    </div>
-                ) : (
-                    <>
-                        <div className="usuario-datos">
-                            <div className="dato-row">
-                                <span className="dato-label">Representante</span>
-                                <span className="dato-value">{datos.nombre} {datos.apellidos}</span>
-                            </div>
-                            <div className="dato-row">
-                                <span className="dato-label">Rol</span>
-                                <span className="dato-value">
-                                    <span className="badge-rol">{datos.rol}</span>
-                                </span>
-                            </div>
-                            <div className="dato-row">
-                                <span className="dato-label">País</span>
-                                <span className="dato-value">
-                                    {datos.pais?.nombre_pais || "—"}
-                                </span>
-                            </div>
-                        </div>
+                <hr className="usuario-divider" />
 
-                        <hr className="usuario-divider" />
-
-                        <div className="discos">
-                            {datos.discos?.map((disco) => (
-                                <div className="disco" key={disco.id}>
-                                    <div className="disco-header">
-                                        <div className="disco-info">
+                <div className="discos">
+                    {datos.discos?.map((disco) => (
+                        <div className="disco" key={disco.id}>
+                            <div className="disco-header">
+                                <div className="disco-info">
+                                    <img
+                                        src={disco.portada}
+                                        alt={disco.nombre}
+                                        className="disco-portada"
+                                    />
+                                    <span className="disco-nombre">{disco.nombre}</span>
+                                </div>
+                                <button
+                                    className="btn-delete"
+                                    onClick={() => deleteDisco(disco.id)}
+                                    aria-label="Eliminar disco"
+                                >✕</button>
+                            </div>
+                            <div className="canciones">
+                                {disco.canciones?.map((cancion) => (
+                                    <div className="cancion" key={cancion.id}>
+                                        <div className="cancion-info">
                                             <img
                                                 src={disco.portada}
-                                                alt={disco.nombre}
-                                                className="disco-portada"
+                                                alt={cancion.nombre_cancion}
+                                                className="cancion-portada"
                                             />
-                                            <span className="disco-nombre">{disco.nombre}</span>
+                                            <span className="cancion-nombre">
+                                                {cancion.nombre_cancion}
+                                            </span>
                                         </div>
                                         <button
                                             className="btn-delete"
-                                            onClick={() => deleteDisco(disco.id)}
-                                            aria-label="Eliminar disco"
+                                            onClick={() => deleteCancion(cancion.id)}
+                                            aria-label="Eliminar canción"
                                         >✕</button>
                                     </div>
-                                    <div className="canciones">
-                                        {disco.canciones?.map((cancion) => (
-                                            <div className="cancion" key={cancion.id}>
-                                                <div className="cancion-info">
-                                                    <img
-                                                        src={disco.portada}
-                                                        alt={cancion.nombre_cancion}
-                                                        className="cancion-portada"
-                                                    />
-                                                    <span className="cancion-nombre">
-                                                        {cancion.nombre_cancion}
-                                                    </span>
-                                                </div>
-                                                <button
-                                                    className="btn-delete"
-                                                    onClick={() => deleteCancion(cancion.id)}
-                                                    aria-label="Eliminar canción"
-                                                >✕</button>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </>
-                )}
-            </div>
-        </div>
+                    ))}
+                </div>
+            </>
+        )}
+    </div>
+        </div >
     );
 };
 
