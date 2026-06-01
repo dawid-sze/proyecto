@@ -174,12 +174,6 @@
 
 @media (max-width: 768px) {
   .reproductor-fijo {
-    padding-bottom: env(safe-area-inset-bottom, 16px);
-  }
-}
-
-@media (max-width: 768px) {
-  .reproductor-fijo {
     padding-bottom: 151px;
   }
 }
