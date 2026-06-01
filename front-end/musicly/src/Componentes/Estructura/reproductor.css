@@ -171,3 +171,15 @@
 .rhap_volume-filled { background: #6C8EBF !important; border-radius: 99px !important; }
 .rhap_volume-button { color: #8FA3BC !important; font-size: 14px !important; }
 .rhap_additional-controls { display: none !important; }
+
+@media (max-width: 768px) {
+  .reproductor-fijo {
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+}
+
+@media (max-width: 768px) {
+  .reproductor-fijo {
+    padding-bottom: 60px;
+  }
+}
