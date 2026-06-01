@@ -4,8 +4,6 @@
    ===================================================== */
 
 .reproductor-fijo {
-  position: relative;
-  z-index: 9999;
   padding-bottom: env(safe-area-inset-bottom, 0px);
   background: #ffffff;
   border-top: 1px solid #DDE6F5;
