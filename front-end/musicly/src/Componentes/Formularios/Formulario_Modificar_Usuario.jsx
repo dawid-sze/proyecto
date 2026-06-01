@@ -77,7 +77,6 @@ const FormularioModificacion = (props) => {
                                 className="btn-editar"
                                 onClick={() => {
                                     const banda_final = bandaToFormData(banda);
-                                    confirm("¿Desea guardar los cambios?") &&
                                         modificarUsuario(banda_final);
                                 }}
                             >

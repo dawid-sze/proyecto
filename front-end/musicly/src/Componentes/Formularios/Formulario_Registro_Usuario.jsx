@@ -191,7 +191,6 @@ const FormularioCreacion = () => {
                                 value="Guardar banda"
                                 onClick={(evento) => {
                                     let banda_final = bandaToFormData(banda)
-                                    confirm("¿Desea guardar esta banda?") &&
                                         registrarUsuario(banda_final);
                                 }}
                             />

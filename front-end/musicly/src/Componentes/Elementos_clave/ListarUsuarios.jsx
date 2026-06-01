@@ -29,7 +29,7 @@ const ListarUsuarios = () => {
 
                         <button
                             className="btn-delete"
-                            onClick={() => borrarGrupo(grupo.id)}
+                            onClick={() => {confirm("¿Desea eliminar este grupo?") && borrarGrupo(grupo.id)}}
                             aria-label="Eliminar grupo"
                         >
                             ✕

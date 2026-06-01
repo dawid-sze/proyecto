@@ -97,7 +97,7 @@ const UsuarioDetalleElemento = ({ datos }) => {
                                         </div>
                                         <button
                                             className="btn-delete"
-                                            onClick={() => deleteDisco(disco.id)}
+                                            onClick={() => {confirm("¿Desea eliminar este disco?") && deleteDisco(disco.id)}}
                                             aria-label="Eliminar disco"
                                         >✕</button>
                                     </div>
@@ -116,7 +116,7 @@ const UsuarioDetalleElemento = ({ datos }) => {
                                                 </div>
                                                 <button
                                                     className="btn-delete"
-                                                    onClick={() => deleteCancion(cancion.id)}
+                                                    onClick={() => {confirm("¿Desea eliminar esta cancion?") && deleteCancion(cancion.id)}}
                                                     aria-label="Eliminar canción"
                                                 >✕</button>
                                             </div>

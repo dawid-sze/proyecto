@@ -120,7 +120,6 @@ const Formulario_CrearCancion = (props) => {
                                         return;
                                     }
                                     const cancion_final = cancionToFormData(cancion);
-                                    confirm("¿Desea guardar esta canción?") &&
                                         registrarCancion(cancion_final);
                                 }}
                             />

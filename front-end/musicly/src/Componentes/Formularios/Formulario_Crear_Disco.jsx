@@ -94,7 +94,6 @@ const Formulario_CrearDisco = (props) => {
                                 value="Guardar disco"
                                 onClick={() => {
                                     const disco_final = discoToFormData(disco);
-                                    confirm("¿Desea guardar este disco?") &&
                                         registrarDisco(disco_final);
                                 }}
                             />
