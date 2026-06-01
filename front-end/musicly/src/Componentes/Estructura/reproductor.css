@@ -174,36 +174,12 @@
 
 @media (max-width: 768px) {
   .reproductor-fijo {
-    padding-bottom: 60px;
-    flex-wrap: wrap;
+    padding-bottom: env(safe-area-inset-bottom, 16px);
   }
+}
 
-  /* Ocultar volumen en móvil para ganar espacio */
-  .rhap_volume-section {
-    display: none !important;
-  }
-
-  /* Controles en fila centrada */
-  .rhap_controls-section {
-    justify-content: center !important;
-  }
-
-  /* Barra de progreso ocupa todo el ancho */
-  .rhap_progress-section {
-    width: 100% !important;
-    order: -1;
-  }
-
-  /* Portada más pequeña en móvil */
-  .reproductor-portada {
-    width: 36px !important;
-    height: 36px !important;
-    min-width: 36px !important;
-  }
-
-  /* Título más corto */
-  .reproductor-titulo {
-    font-size: 11px !important;
-    max-width: 100px !important;
+@media (max-width: 768px) {
+  .reproductor-fijo {
+    padding-bottom: 150px;
   }
 }
