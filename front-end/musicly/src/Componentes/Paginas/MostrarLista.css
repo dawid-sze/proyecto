@@ -62,18 +62,6 @@
   justify-content: center;
 }
 
-@media (max-width: 640px) {
- .lista-canciones-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 400px) {
-  .lista-canciones-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* ── Paginación ──────────────────────────────────────── */
 .paginacion {
   display: flex;
@@ -112,3 +100,33 @@
 .btn-pag:hover { background: #DDE8F5; }
 .btn-pag:disabled { opacity: 0.4; cursor: default; }
 .btn-pag.active { background: #E2711D; color: #fff; }
+
+/* ── Móvil ───────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .lista-canciones-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lista-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 0.75rem;
+  }
+
+  .paginacion {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .paginacion-btns {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .lista-canciones-grid {
+    grid-template-columns: 1fr;
+  }
+}
