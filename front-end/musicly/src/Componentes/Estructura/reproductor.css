@@ -4,7 +4,7 @@
    ===================================================== */
 
 .reproductor-fijo {
-  position: relative;
+  position: absolute;
   z-index: 9999;
   background: #ffffff;
   border-top: 1px solid #DDE6F5;
