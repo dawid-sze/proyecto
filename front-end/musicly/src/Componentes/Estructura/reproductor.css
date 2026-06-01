@@ -172,7 +172,7 @@
 .rhap_volume-button { color: #8FA3BC !important; font-size: 14px !important; }
 .rhap_additional-controls { display: none !important; }
 
-media (max-width: 768px) {
+@media (max-width: 768px) {
   .reproductor-fijo {
     flex-direction: column;
     padding: 6px 8px 8px;
