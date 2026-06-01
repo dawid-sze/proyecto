@@ -4,7 +4,7 @@
    ===================================================== */
 
 .reproductor-fijo {
-  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 50px);
   background: #ffffff;
   border-top: 1px solid #DDE6F5;
   padding: 0.65rem 1.25rem;
