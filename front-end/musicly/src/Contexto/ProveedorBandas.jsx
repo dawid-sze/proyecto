@@ -57,7 +57,9 @@ const ProveedorBandas = (props) => {
         const datos = await listarAPI();
         console.log(datos)
         setListado(datos);
+        inicializarListadoPorGeneroMasEscuchado()
         inicializarCancionesAleatorias();
+        inicializarListadoPorGenero()
     };
     //Listado de canciones según el género mas escuchado del usuario
     const inicializarListadoPorGeneroMasEscuchado = async (user) => {
