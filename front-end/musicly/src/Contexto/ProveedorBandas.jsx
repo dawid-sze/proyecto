@@ -252,6 +252,8 @@ const ProveedorBandas = (props) => {
         try {
             const datos = await insertarCancion(cancion);
             if (!datos.errors) {
+                let usaurio = await obtenerUsuario(token)
+                setUser(usaurio)
                 inicializarListado();
                 navegar(`/`);
             } else {
@@ -310,6 +312,8 @@ const ProveedorBandas = (props) => {
     const crearComentario = async (comentario, id) => {
         const datos = await comentarCancion(comentario, id);
         if (!datos.errors) {
+                let usaurio = await obtenerUsuario(token)
+                setUser(usaurio)
                  inicializarListado();
             } else {
                 console.log(datos.errors)

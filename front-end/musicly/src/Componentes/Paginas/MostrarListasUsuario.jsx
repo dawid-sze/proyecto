@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from "react";
+import React, { Fragment, useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../Contexto/ProveedorAutentificacion.jsx";
 import { ListaCanciones_SinDisco } from "../Elementos/ListarCanciones_SinDisco.jsx";
 import { contextoListado } from "../../Contexto/ProveedorBandas.jsx";
@@ -9,13 +9,22 @@ const MostrarListasUsuario = ({ onPlay }) => {
     const { setLista_id } = useContext(contextoListado);
     const [lista, setLista] = useState("");
 
-    const handleChange = (e) => {
-        const listaId = e.target.value;
-        setLista_id(listaId);
-        const listaSeleccionada = user?.[0]?.listas?.find(l => l.id == listaId);
-        setLista(listaSeleccionada || "");
-        console.log("lista_id seteado:", listaId);
+    const [listaId, setListaId] = useState("");
 
+    // Sincronizar lista local cuando el usuario se actualiza
+    useEffect(() => {
+        if (listaId) {
+            const listaActualizada = user?.[0]?.listas?.find(l => l.id == listaId);
+            setLista(listaActualizada || "");
+        }
+    }, [user]);
+
+    const handleChange = (e) => {
+        const id = e.target.value;
+        setListaId(id);
+        setLista_id(id);
+        const listaSeleccionada = user?.[0]?.listas?.find(l => l.id == id);
+        setLista(listaSeleccionada || "");
     };
 
     return (
