@@ -9,18 +9,19 @@ import { AuthContext } from "../../Contexto/ProveedorAutentificacion";
 import { CrearMensaje } from "../Formularios/Formulario_comentarios";
 import "./Cancion.css";
 
-const Cancion = ({ cancion, portada, alHacerClick }) => {
+const Cancion = ({ cancion, portada, alHacerClick, enLista = false }) => {
     const { borrarCancionLista, lista_id } = useContext(contextoListado);
     const { user, setUser } = useContext(AuthContext);
     const { id, nombre_cancion, comentarios = [] } = cancion;
     const location = useLocation();
     const currentUser = user?.[0] || user;
     const likes = currentUser?.likes || [];
+    console.log("enLista:", enLista, "lista_id:", lista_id);
 
     const [mostrarComentarios, setMostrarComentarios] = useState(false);
     const footerRef = useRef(null);
 
-
+    // Cierra comentarios si cambia la canción (el slider reutiliza instancias)
     useEffect(() => {
         setMostrarComentarios(false);
     }, [id]);
@@ -70,17 +71,17 @@ const Cancion = ({ cancion, portada, alHacerClick }) => {
                         ▶
                     </button>
 
-                    {location.pathname !== "/listarUsuario" && (
+                    {!enLista && (
                         <AniardirCancioLista cancionId={id} />
                     )}
 
-                    {location.pathname === "/listarUsuario" && lista_id && (
+                    {enLista && (
                         <button
                             className="btn-icon danger"
                             aria-label="Quitar de lista"
                             onClick={() => borrarCancionLista(lista_id, cancion.id)}
                         >
-                            <i className="ti ti-x"></i>
+                            ✕
                         </button>
                     )}
                 </div>

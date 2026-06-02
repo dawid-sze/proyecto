@@ -113,7 +113,8 @@
 }
 
 .btn-icon:hover { background: #DDE8F5; }
-.btn-icon.danger:hover { background: #FCEAEA; color: #E05C68; }
+.btn-icon.danger { background: #FCEAEA; color: #E05C68; }
+.btn-icon.danger:hover { background: #F5B8BE; color: #E05C68; }
 
 /* ── Footer / comentarios ────────────────────────────── */
 .cancion-footer {

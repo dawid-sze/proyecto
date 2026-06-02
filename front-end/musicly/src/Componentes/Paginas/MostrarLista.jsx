@@ -40,7 +40,7 @@ const MostrarListas = ({ onPlay }) => {
                             </select>
                         </div>
                         <div className="lista-titulo">
-                            {genero?.nombre_genero || "Selecciona un género"}
+                            {genero?.nombre_genero  || "Selecciona un género"}
                         </div>
                     </div>
 
