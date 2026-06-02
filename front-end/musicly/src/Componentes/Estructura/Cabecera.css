@@ -6,10 +6,13 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 0.65rem 1.25rem;
+  padding: 0 1.25rem;
+  height: 92px;
   background: #ffffff;
   border-bottom: 1px solid #DDE6F5;
   flex-shrink: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ── Hamburguesa (solo móvil) ───────────────────────── */
@@ -34,7 +37,6 @@
 /* ── Buscador ────────────────────────────────────────── */
 .cabecera-buscador {
   flex: 1;
-  max-width: 340px;
 }
 
 /* ── Usuario ─────────────────────────────────────────── */
