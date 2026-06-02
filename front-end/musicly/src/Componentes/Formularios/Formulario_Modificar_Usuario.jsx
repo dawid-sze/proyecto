@@ -63,6 +63,7 @@ const FormularioModificacion = (props) => {
                         </div>
 
                         <label className="file-label">
+                            <label>Avatar</label>
                             <input
                                 type="file"
                                 name="avatar"

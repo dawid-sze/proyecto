@@ -60,16 +60,20 @@ const Formulario_CrearDisco = (props) => {
 
                         <div className="form-row">
                             <label htmlFor="portada">Portada</label>
-                             <span className="file-btn">
+                            <label className="file-label">
                                 <input
-                                ref={portadaDiscoRef}
-                                type="file"
-                                name="portada"
-                                required
-                                onChange={actualizarDato}
-                            />
-                             </span>
-                            
+                                    ref={portadaDiscoRef}
+                                    type="file"
+                                    name="portada"
+                                    required
+                                    onChange={actualizarDato}
+                                    style={{ display: "none" }}
+                                />
+                                <span className="file-btn">
+                                    <i className="ti ti-upload" aria-hidden="true"></i>
+                                    {disco.portada ? disco.portada.name : "Seleccionar imagen"}
+                                </span>
+                            </label>
                             <span className="error">{errores.portada}</span>
                         </div>
 
@@ -97,7 +101,7 @@ const Formulario_CrearDisco = (props) => {
                                 value="Guardar disco"
                                 onClick={() => {
                                     const disco_final = discoToFormData(disco);
-                                        registrarDisco(disco_final);
+                                    registrarDisco(disco_final);
                                 }}
                             />
                             <input
