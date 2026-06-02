@@ -62,20 +62,22 @@ const FormularioModificacion = (props) => {
                             />
                         </div>
 
-                        <label className="file-label">
+                        <div className="form-row">
                             <label>Avatar</label>
-                            <input
-                                type="file"
-                                name="avatar"
-                                onChange={actualizarDato}
-                                style={{ display: "none" }}
-                            />
-                            <span className="file-btn">
-                                <i className="ti ti-upload" aria-hidden="true"></i>
-                                {banda.avatar ? banda.avatar.name : "Seleccionar imagen"}
-                            </span>
-                        </label>
-
+                            <label className="file-label">
+                                <input
+                                    type="file"
+                                    name="avatar"
+                                    onChange={actualizarDato}
+                                    style={{ display: "none" }}
+                                />
+                                <span className="file-btn">
+                                    <i className="ti ti-upload" aria-hidden="true"></i>
+                                    {banda.avatar ? banda.avatar.name : "Seleccionar imagen"}
+                                </span>
+                            </label>
+                            <span className="error">{errores.avatar}</span>
+                        </div>
                         <div style={{ marginTop: "0.5rem" }}>
                             <button
                                 className="btn-editar"
