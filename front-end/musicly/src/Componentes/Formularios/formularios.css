@@ -237,9 +237,9 @@ section.crear {
 }
 
 .login-logo {
-  width: 64px;
-  height: 64px;
-  border-radius: 14px;
+  width: 96px;
+  height: 96px;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -280,3 +280,58 @@ section.crear {
 }
 
 .login-registro a:hover { text-decoration: underline; }
+
+/* ── Grid 2 columnas en formularios ─────────────────── */
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 480px) {
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Registro: card más ancha ────────────────────────── */
+.registro-card {
+  max-width: 600px !important;
+}
+
+section.login-page .registro-card {
+  max-width: 600px;
+}
+
+/* ── Botón file personalizado ────────────────────────── */
+.file-label {
+  display: block;
+  cursor: pointer;
+  margin: 0;
+}
+
+.file-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  transition: background 0.18s, transform 0.1s;
+  justify-content: center;
+}
+
+.file-btn:hover {
+  background: var(--brand-hover);
+  transform: translateY(-1px);
+}
+
+.file-label i {
+  color: #fff;
+}

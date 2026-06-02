@@ -1,216 +1,134 @@
 import React, { Fragment, useRef, useState, useContext } from "react";
 import { contextoListado } from "../../Contexto/ProveedorBandas.jsx";
+import logo from '../../assets/imagenes/musicly-logo.png';
+import { Link } from "react-router-dom";
 import './formularios.css';
-//FORMULARIO DE INSERCIÓN DE LIBROS 
+
 const FormularioCreacion = () => {
     let bandaInicial = {
-        "nombre_grupo": "",
-        "nombre": "",
-        "apellidos": "",
-        "password": "",
-        "email": "",
-        "avatar": "",
-        "id_pais": ""
-    }
+        nombre_grupo: "", nombre: "", apellidos: "",
+        password: "", email: "", avatar: "", id_pais: ""
+    };
     const [banda, setBanda] = useState(bandaInicial);
-
-
-
     const { registrarUsuario, errores, paises } = useContext(contextoListado);
-
-    const nombreGrupoRef = useRef(null);
-    const nombreRef = useRef(null);
-    const apellidosRef = useRef(null);
-    const passwordRef = useRef(null);
-    const emailRef = useRef(null);
-    const avatarRef = useRef(null);
-
-    let referencias = [];
-    referencias.push(nombreGrupoRef, nombreRef, apellidosRef, passwordRef, emailRef, avatarRef);
 
     const actualizarDato = (evento) => {
         const { name, value, files } = evento.target;
-        if (name == "avatar") {
+        if (name === "avatar") {
             setBanda({ ...banda, avatar: files[0] });
         } else {
             setBanda({ ...banda, [name]: value });
         }
-    }
+    };
 
     const bandaToFormData = (banda) => {
         const formData = new FormData();
-
-        Object.keys(banda).forEach((clave) => {
-            formData.append(clave, banda[clave]);
-        });
-
+        Object.keys(banda).forEach((clave) => formData.append(clave, banda[clave]));
         return formData;
     };
 
     const limpiarFormulario = () => {
         document.getElementById("formulario_1").reset();
-        let campos_de_texto = document.getElementById("formulario_1").querySelectorAll('input[type="text"], input[type="email"], input[type="password"]');
-        campos_de_texto.forEach(campo => {
-            campo.value = '';
-        });
-        setBanda({
-            nombre_grupo: "",
-            nombre: "",
-            apellidos: "",
-            password: "",
-            email: "",
-            id_pais: "",
-            avatar: null
-        });
-    }
+        setBanda({ nombre_grupo: "", nombre: "", apellidos: "", password: "", email: "", id_pais: "", avatar: null });
+    };
 
     return (
         <Fragment>
-            <section className="crear">
-                <h2>Registrar Banda</h2>
-                <div className="form-card">
-                    <form action="" id="formulario_1">
-                        <div>
-                            <label htmlFor="nombre_grupo">Nombre del grupo</label>
-                            <input
-                                ref={nombreGrupoRef}
-                                type="text"
-                                name="nombre_grupo"
-                                placeholder="Escribe el nombre del grupo"
-                                required
-                                value={banda.nombre_grupo || ""}
-                                onChange={(evento) => {
-                                    actualizarDato(evento);
-                                }}
-                            />
-                            <span className="error">{errores.nombre_grupo}</span>
+            <section className="login-page">
+                <div className="form-card login-card registro-card">
+
+                    <div className="login-logo">
+                        <img src={logo} alt="Musicly" />
+                    </div>
+
+                    <h2>Crear cuenta</h2>
+                    <p className="login-subtitle">Únete a Musicly</p>
+
+                    <form id="formulario_1">
+
+                        {/* Fila 1: nombre grupo + país */}
+                        <div className="form-grid-2">
+                            <div className="form-row">
+                                <label>Nombre del grupo</label>
+                                <input type="text" name="nombre_grupo" placeholder="Nombre del grupo"
+                                    value={banda.nombre_grupo || ""} onChange={actualizarDato} required />
+                                <span className="error">{errores.nombre_grupo}</span>
+                            </div>
+                            <div className="form-row">
+                                <label>País</label>
+                                <select name="id_pais" value={banda.id_pais} onChange={actualizarDato} required>
+                                    <option value="">Selecciona un país</option>
+                                    {paises.map((pais, index) => (
+                                        <option key={index} value={String(pais.id)}>{pais.nombre_pais}</option>
+                                    ))}
+                                </select>
+                                <span className="error">{errores.pais}</span>
+                            </div>
                         </div>
 
-                        <div>
-                            <label htmlFor="nombre">Nombre</label>
-                            <input
-                                ref={nombreRef}
-                                type="text"
-                                name="nombre"
-                                placeholder="Escribe tu nombre"
-                                required
-                                value={banda.nombre || ""}
-                                onChange={(evento) => {
-                                    actualizarDato(evento);
-                                }}
-                            />
-                            <span className="error">{errores.nombre}</span>
+                        {/* Fila 2: nombre + apellidos */}
+                        <div className="form-grid-2">
+                            <div className="form-row">
+                                <label>Nombre</label>
+                                <input type="text" name="nombre" placeholder="Tu nombre"
+                                    value={banda.nombre || ""} onChange={actualizarDato} required />
+                                <span className="error">{errores.nombre}</span>
+                            </div>
+                            <div className="form-row">
+                                <label>Apellidos</label>
+                                <input type="text" name="apellidos" placeholder="Tus apellidos"
+                                    value={banda.apellidos || ""} onChange={actualizarDato} required />
+                                <span className="error">{errores.apellidos}</span>
+                            </div>
                         </div>
 
-                        <div>
-                            <label htmlFor="apellidos">Apellidos</label>
-                            <input
-                                ref={apellidosRef}
-                                type="text"
-                                name="apellidos"
-                                placeholder="Escribe tus apellidos"
-                                required
-                                value={banda.apellidos || ""}
-                                onChange={(evento) => {
-                                    actualizarDato(evento);
-                                }}
-                            />
-                            <span className="error">{errores.apellidos}</span>
+                        {/* Fila 3: email + password */}
+                        <div className="form-grid-2">
+                            <div className="form-row">
+                                <label>Email</label>
+                                <input type="email" name="email" placeholder="tu@email.com"
+                                    value={banda.email || ""} onChange={actualizarDato} required />
+                                <span className="error">{errores.email}</span>
+                            </div>
+                            <div className="form-row">
+                                <label>Contraseña</label>
+                                <input type="password" name="password" placeholder="••••••••"
+                                    value={banda.password || ""} onChange={actualizarDato} required />
+                                <span className="error">{errores.password}</span>
+                            </div>
                         </div>
 
-                        <div>
-                            <label htmlFor="password">Contraseña</label>
-                            <input
-                                ref={passwordRef}
-                                type="password"
-                                name="password"
-                                placeholder="Escribe tu contraseña"
-                                required
-                                value={banda.password || ""}
-                                onChange={(evento) => {
-                                    actualizarDato(evento);
-                                }}
-                            />
-                            <span className="error">{errores.password}</span>
-                        </div>
-
-                        <div>
-                            <label htmlFor="email">Email</label>
-                            <input
-                                ref={emailRef}
-                                type="email"
-                                name="email"
-                                placeholder="Escribe tu email"
-                                required
-                                value={banda.email || ""}
-                                onChange={(evento) => {
-                                    actualizarDato(evento);
-                                }}
-                            />
-                            <span className="error">{errores.email}</span>
-                        </div>
-
-                        <div>
-                            <label htmlFor="avatar">Avatar</label>
-                            <input
-                                ref={avatarRef}
-                                type="file"
-                                name="avatar"
-                                placeholder="URL del avatar"
-                                required
-                                onChange={(evento) => {
-                                    actualizarDato(evento);
-                                }}
-                            />
+                        {/* Avatar */}
+                        <div className="form-row">
+                            <label>Avatar</label>
+                            <label className="file-label">
+                                <input type="file" name="avatar" onChange={actualizarDato} style={{ display: "none" }} />
+                                <span className="file-btn">
+                                    <i className="ti ti-upload" aria-hidden="true"></i>
+                                    {banda.avatar ? banda.avatar.name : "Seleccionar imagen"}
+                                </span>
+                            </label>
                             <span className="error">{errores.avatar}</span>
                         </div>
-                        <div>
-                            <label htmlFor="pais">País</label>
-                            <select
-                                name="id_pais"
-                                value={banda.id_pais}
-                                onChange={(evento) => {
-                                    actualizarDato(evento);
-                                }}
-                                required
-                            >
-                                <option value="">Selecciona un país</option>
-                                {paises.map((pais, index) => (
-                                    <option key={index} value={String(pais.id)}>
-                                        {pais.nombre_pais}
-                                    </option>
-                                ))}
-                            </select>
-                            <span className="error">{errores.pais}</span>
+
+                        {/* Botones */}
+                        <div className="form-grid-2" style={{ marginTop: "0.5rem" }}>
+                            <input type="button" value="Crear cuenta"
+                                onClick={() => registrarUsuario(bandaToFormData(banda))} />
+                            <input type="button" value="Limpiar" className="btn-limpiar"
+                                onClick={limpiarFormulario} />
                         </div>
 
-                        <div>
-                            <input
-                                type="button"
-                                id="enviar"
-                                value="Guardar banda"
-                                onClick={(evento) => {
-                                    let banda_final = bandaToFormData(banda)
-                                        registrarUsuario(banda_final);
-                                }}
-                            />
-                        </div>
-                        <div><br />
-                            <input
-                                type="button"
-                                value="Limpiar formulario"
-                                onClick={(evento) => {
-                                    limpiarFormulario();
-                                }}
-                            />
-                        </div>
+                        <p className="login-registro">
+                            ¿Ya tienes cuenta?{" "}
+                            <Link to="/login">Inicia sesión</Link>
+                        </p>
+
                     </form>
                 </div>
             </section>
         </Fragment>
-    )
-}
+    );
+};
 
-export {
-    FormularioCreacion
-}
+export { FormularioCreacion };
