@@ -60,13 +60,16 @@ const Formulario_CrearDisco = (props) => {
 
                         <div className="form-row">
                             <label htmlFor="portada">Portada</label>
-                            <input
+                             <span className="file-btn">
+                                <input
                                 ref={portadaDiscoRef}
                                 type="file"
                                 name="portada"
                                 required
                                 onChange={actualizarDato}
                             />
+                             </span>
+                            
                             <span className="error">{errores.portada}</span>
                         </div>
 

@@ -41,7 +41,6 @@ const Navegacion = ({ open, onClose }) => {
                     <ul>
                         {link("/", "ti-home", "Inicio")}
                         {link("/crear", "ti-disc", "Crear disco")}
-                        {link("/crearLista", "ti-playlist", "Crear lista")}
                         {link("/crearCancion", "ti-music", "Crear canción")}
                     </ul>
 

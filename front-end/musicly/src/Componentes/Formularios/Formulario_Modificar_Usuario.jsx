@@ -64,11 +64,14 @@ const FormularioModificacion = (props) => {
 
                         <div className="form-row">
                             <label style={{ display: "block", textAlign: "left" }}>Avatar</label>
-                            <input
+                             <span className="file-btn">
+                                <input
                                 type="file"
                                 name="avatar"
                                 onChange={actualizarDato}
                             />
+                             </span>
+                            
                             <span className="error">{errores.avatar}</span>
                         </div>
 
