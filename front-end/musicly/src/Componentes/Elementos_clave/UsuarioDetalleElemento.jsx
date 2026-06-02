@@ -64,7 +64,7 @@ const UsuarioDetalleElemento = ({ datos }) => {
                     <>
                         <div className="usuario-datos">
                             <div className="dato-row">
-                                <span className="dato-label">Representante</span>
+                                <span className="dato-label">Nombre y Apellidos</span>
                                 <span className="dato-value">{datos.nombre} {datos.apellidos}</span>
                             </div>
                             <div className="dato-row">

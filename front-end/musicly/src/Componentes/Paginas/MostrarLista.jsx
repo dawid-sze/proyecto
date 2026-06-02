@@ -40,21 +40,26 @@ const MostrarListas = ({ onPlay }) => {
                             </select>
                         </div>
                         <div className="lista-titulo">
-                            {genero?.nombre_genero  || "Selecciona un género"}
+                            {genero?.nombre_genero || "Selecciona un género"}
                         </div>
                     </div>
 
-                    <div className="lista-canciones-grid">
-                        {cancionesPagina.map((cancion, index) => (
-                            <Cancion
-                                key={cancion.id}
-                                cancion={cancion}
-                                portada={cancion.disco?.portada}
-                                alHacerClick={() => onPlay(cancionesPagina, index, cancion.disco?.id_genero)}
-                            />
-                        ))}
-                    </div>
-
+                    {cancionesPagina.length === 0 ? (
+                        <div style={{ padding: "2rem", textAlign: "center", color: "#8FA3BC", fontSize: "13px" }}>
+                            No hay canciones disponibles
+                        </div>
+                    ) : (
+                        <div className="lista-canciones-grid">
+                            {cancionesPagina.map((cancion, index) => (
+                                <Cancion
+                                    key={cancion.id}
+                                    cancion={cancion}
+                                    portada={cancion.disco?.portada}
+                                    alHacerClick={() => onPlay(cancionesPagina, index, cancion.disco?.id_genero)}
+                                />
+                            ))}
+                        </div>
+                    )}
                     {totalPaginas > 1 && (
                         <div className="paginacion">
                             <span className="paginacion-info">
