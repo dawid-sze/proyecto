@@ -23,7 +23,6 @@ const MostrarListas = ({ onPlay }) => {
     const canciones = cancionesPorGenero || [];
     const totalPaginas = Math.ceil(canciones.length / POR_PAGINA);
     const cancionesPagina = canciones.slice(pagina * POR_PAGINA, (pagina + 1) * POR_PAGINA);
-
     return (
         <Fragment>
             <div className="lista-page">
@@ -55,6 +54,8 @@ const MostrarListas = ({ onPlay }) => {
                                     key={cancion.id}
                                     cancion={cancion}
                                     portada={cancion.disco?.portada}
+                                    nombre ={cancion.disco?.grupo.nombre_grupo}
+                                    id_banda = {cancion.disco?.grupo.id}
                                     alHacerClick={() => onPlay(cancionesPagina, index, cancion.disco?.id_genero)}
                                 />
                             ))}

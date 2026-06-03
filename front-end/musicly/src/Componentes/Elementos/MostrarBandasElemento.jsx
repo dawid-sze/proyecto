@@ -15,7 +15,6 @@ const MostrarBandaElemento = ({ idBanda, onPlay }) => {
     const discos = banda.discos || [];
     const total = discos.length;
     const disco = discos[pagina];
-
     return (
         <Fragment>
             <div className="banda-header">

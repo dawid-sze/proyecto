@@ -9,7 +9,7 @@ import { AuthContext } from "../../Contexto/ProveedorAutentificacion";
 import { CrearMensaje } from "../Formularios/Formulario_comentarios";
 import "./Cancion.css";
 
-const Cancion = ({ cancion, portada, alHacerClick, enLista = false }) => {
+const Cancion = ({ cancion, portada, nombre, id_banda, alHacerClick, enLista = false }) => {
     const { borrarCancionLista, lista_id } = useContext(contextoListado);
     const { user, setUser } = useContext(AuthContext);
     const { id, nombre_cancion, comentarios = [] } = cancion;
@@ -17,7 +17,7 @@ const Cancion = ({ cancion, portada, alHacerClick, enLista = false }) => {
     const navegar = useNavigate();
     const currentUser = user?.[0] || user;
     const likes = currentUser?.likes || [];
-    console.log("enLista:", enLista, "lista_id:", lista_id);
+    console.log(nombre, id_banda);
 
     const [mostrarComentarios, setMostrarComentarios] = useState(false);
     const footerRef = useRef(null);
@@ -65,7 +65,15 @@ const Cancion = ({ cancion, portada, alHacerClick, enLista = false }) => {
             </div>
 
             <div className="cancion-body">
-                <div className="cancion-titulo">{nombre_cancion || "Sin título"}</div>
+                 <div className="cancion-titulo">{nombre_cancion || "Sin título"}</div>
+                    {nombre && id_banda && (
+                        <div
+                            className="cancion-banda"
+                            onClick={() => navegar(`/mostrar/${id_banda}`)}
+                        >
+                            {nombre}
+                        </div>
+                    )}
 
                 <div className="cancion-actions">
                     <button className="btn-reproducir" onClick={alHacerClick} aria-label="Reproducir">

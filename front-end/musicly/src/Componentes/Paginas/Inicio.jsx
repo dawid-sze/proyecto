@@ -7,7 +7,8 @@ import "./Inicio.css";
 const Inicio = ({ onPlay }) => {
     const { listado, cancionesGeneroMasEscuchado, cancionesAleatorias } = useContext(contextoListado);
     const navigate = useNavigate();
-    
+    console.log(cancionesAleatorias)
+    console.log(cancionesGeneroMasEscuchado)
     const bandasAleatorias = [...listado]
         .sort(() => Math.random() - 0.5)
         .slice(0, 5);

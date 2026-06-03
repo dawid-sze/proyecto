@@ -9,7 +9,7 @@ const ListaCanciones = ({ canciones, onPlay, portada, genero, nombre, id }) => {
           cancion={cancion}
           portada={portada}
           nombre = {nombre}
-          id = {id}
+          id_banda = {id}
           alHacerClick={() => onPlay(canciones, index, genero)}
         />
       ))}
