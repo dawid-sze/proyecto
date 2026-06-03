@@ -53,9 +53,7 @@ const ProveedorBandas = (props) => {
 
     //FUNCIÓN PARA INICIALIZAR LA BIBLIOTECA
     const inicializarListado = async () => {
-        console.log("hola inicializar")
         const datos = await listarAPI();
-        console.log(datos)
         setListado(datos);
         inicializarListadoPorGeneroMasEscuchado()
         inicializarCancionesAleatorias();
@@ -64,27 +62,21 @@ const ProveedorBandas = (props) => {
     //Listado de canciones según el género mas escuchado del usuario
     const inicializarListadoPorGeneroMasEscuchado = async (user) => {
         const datos = await listarPorGeneroMasEscuchado(user.mas_escuchados[0].id);
-        console.log(datos)
         setcancionesGeneroMasEscuchado(datos);
     };
 
     const inicializarListadoPorGenero = async (id) => {
-        console.log(id)
         const datos = await listarCancionesPorGenero(id);
-        console.log(datos)
         setcancionesPorGenero(datos);
     };
 
 
     const inicializarPaises = async () => {
         const datos = await listarPaises();
-        console.log(datos)
         setPaises(datos);
     };
     const inicializarCancionesAleatorias = async () => {
-        console.log("Aleatorias")
         const datos = await listarCancionesAleatorias();
-        console.log(datos)
         setCancionesAleatorias(datos);
     };
 
@@ -115,7 +107,6 @@ const ProveedorBandas = (props) => {
     const deleteCancion = async (identificador) => {
         try {
             let datos = await eliminarCancion(identificador);
-            console.log(datos)
             let usaurio = await obtenerUsuario(token)
             setUser(usaurio)
             inicializarListado();
@@ -127,7 +118,6 @@ const ProveedorBandas = (props) => {
     const deleteDisco = async (identificador) => {
         try {
             let datos = await eliminarDisco(identificador);
-            console.log(datos)
             let usaurio = await obtenerUsuario(token)
             setUser(usaurio)
             inicializarListado();
@@ -153,12 +143,10 @@ const ProveedorBandas = (props) => {
     const registrarUsuario = async (banda) => {
         try {
             const datos = await Registrarse(banda);
-            console.log(datos.error)
             if (!datos.errors) {
                 inicializarListado();
                 navegar(`/login/`);
             } else {
-                console.log(datos.errors)
                 setErrores(datos.errors)
             }
 
@@ -176,7 +164,6 @@ const ProveedorBandas = (props) => {
                 inicializarListado();
                 navegar(`/`);
             } else {
-                console.log(datos.errors)
                 setErrores(datos.errors)
             }
 
@@ -194,7 +181,6 @@ const ProveedorBandas = (props) => {
 
     const insertarCancionLista = async (lista, cancion) => {
         const datos = await aniadirCancionLista(lista, cancion);
-        console.log(datos)
         let usaurio = await obtenerUsuario(token)
         setUser(usaurio)
     }
@@ -205,7 +191,6 @@ const ProveedorBandas = (props) => {
             let usaurio = await obtenerUsuario(token);
             setUser(usaurio);
         } else {
-            console.log(datos?.errors);
             setErrores(datos?.errors || []);
         }
     };
@@ -216,7 +201,6 @@ const ProveedorBandas = (props) => {
             let usaurio = await obtenerUsuario(token);
             setUser(usaurio);
         } else {
-            console.log(datos?.errors);
             setErrores(datos?.errors || []);
         }
     };
@@ -274,7 +258,6 @@ const ProveedorBandas = (props) => {
     //FUNCIÓN PARA MODIFICAR
     const modificarUsuario = async (banda) => {
         try {
-            console.log(banda)
             let datos = await modificarAPI(banda);
             if (!datos.errors) {
                 let usaurio = await obtenerUsuario(token)
@@ -282,7 +265,6 @@ const ProveedorBandas = (props) => {
                 navegar(`/usuario`);
                 inicializarListado();
             } else {
-                console.log(datos.errors)
                 setErrores(datos.errors)
             }
         } catch (error) {
@@ -316,7 +298,6 @@ const ProveedorBandas = (props) => {
                 setUser(usaurio)
                  inicializarListado();
             } else {
-                console.log(datos.errors)
                 setErrores(datos.errors)
             }
     }

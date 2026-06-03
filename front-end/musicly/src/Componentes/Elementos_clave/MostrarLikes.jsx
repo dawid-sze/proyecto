@@ -8,7 +8,7 @@ const POR_PAGINA = 10;
 const MostrarLikes = ({ onPlay }) => {
     const { user } = useContext(AuthContext);
     const [pagina, setPagina] = useState(0);
-
+    console.log(user)
     const currentUser = user?.[0] || user;
     const likes = currentUser?.likes || [];
 
