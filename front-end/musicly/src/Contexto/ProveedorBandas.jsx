@@ -145,7 +145,7 @@ const ProveedorBandas = (props) => {
             const datos = await Registrarse(banda);
             if (!datos.errors) {
                 inicializarListado();
-                navegar(`/login/`);
+                navegar(`/login`);
             } else {
                 setErrores(datos.errors)
             }
