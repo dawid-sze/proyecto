@@ -315,3 +315,16 @@
   color: #E05C68;
   margin-top: 2px;
 }
+
+/* ── Nombre de banda ─────────────────────────────────── */
+.cancion-banda {
+  font-size: 11px;
+  color: #6C8EBF;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.13s;
+}
+
+.cancion-banda:hover { color: #3B5278; text-decoration: underline; }

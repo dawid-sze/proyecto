@@ -12,7 +12,6 @@ const MostrarBandaElemento = ({ idBanda, onPlay }) => {
     if (!banda) {
         return <p style={{ color: "#8FA3BC", fontSize: "14px" }}>Buscando información de la banda...</p>;
     }
-
     const discos = banda.discos || [];
     const total = discos.length;
     const disco = discos[pagina];
@@ -53,6 +52,8 @@ const MostrarBandaElemento = ({ idBanda, onPlay }) => {
                             onPlay={onPlay}
                             portada={disco.portada}
                             genero={disco.id_genero}
+                            nombre = {banda.nombre_grupo}
+                            id = {banda.id}
                         />
                     </div>
 

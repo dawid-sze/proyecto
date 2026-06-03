@@ -9,6 +9,7 @@ const ListaCanciones_SinDisco = ({ canciones, onPlay, enLista = false }) => {
           cancion={cancion}
           portada={cancion.disco?.portada}
           enLista={enLista}
+          
           alHacerClick={() => onPlay(canciones, index, cancion.disco?.id_genero)}
         />
       ))}

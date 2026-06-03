@@ -7,11 +7,12 @@ import "./Inicio.css";
 const Inicio = ({ onPlay }) => {
     const { listado, cancionesGeneroMasEscuchado, cancionesAleatorias } = useContext(contextoListado);
     const navigate = useNavigate();
-
+    
     const bandasAleatorias = [...listado]
         .sort(() => Math.random() - 0.5)
         .slice(0, 5);
-
+    console.log(cancionesAleatorias)
+    console.log(cancionesGeneroMasEscuchado)
     return (
         <Fragment>
             <div className="seccion">

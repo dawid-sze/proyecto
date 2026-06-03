@@ -1,7 +1,7 @@
 import React, { useContext, useMemo, useState, useEffect, useRef } from "react";
 import sin_portada from "../../assets/imagenes/sin_portada.jpg";
 import { AniardirCancioLista } from "./Aniadiar_cancion_a_lista";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { contextoListado } from "../../Contexto/ProveedorBandas";
 import { likearCancion } from "../../Hooks/likearCancion";
 import { deslikearCancion } from "../../Hooks/deslikearCancion";
@@ -14,6 +14,7 @@ const Cancion = ({ cancion, portada, alHacerClick, enLista = false }) => {
     const { user, setUser } = useContext(AuthContext);
     const { id, nombre_cancion, comentarios = [] } = cancion;
     const location = useLocation();
+    const navegar = useNavigate();
     const currentUser = user?.[0] || user;
     const likes = currentUser?.likes || [];
     console.log("enLista:", enLista, "lista_id:", lista_id);

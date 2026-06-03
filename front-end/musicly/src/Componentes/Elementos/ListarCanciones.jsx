@@ -1,6 +1,6 @@
 import { Cancion } from "../Elementos_clave/Cancion.jsx";
 
-const ListaCanciones = ({ canciones, onPlay, portada, genero }) => {
+const ListaCanciones = ({ canciones, onPlay, portada, genero, nombre, id }) => {
   return (
     <>
       {canciones.map((cancion, index) => (
@@ -8,6 +8,8 @@ const ListaCanciones = ({ canciones, onPlay, portada, genero }) => {
           key={cancion.id}
           cancion={cancion}
           portada={portada}
+          nombre = {nombre}
+          id = {id}
           alHacerClick={() => onPlay(canciones, index, genero)}
         />
       ))}
