@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useContext } from "react";
+import React, { Fragment, useState, useContext, useEffect  } from "react";
 import { contextoListado } from "../../Contexto/ProveedorBandas.jsx";
 import './formularios.css';
 
@@ -6,7 +6,7 @@ const FormularioModificacion = (props) => {
     const [banda, setBanda] = useState(props.bandaModificar);
     const { errores, modificarUsuario, limpiarErrores } = useContext(contextoListado);
     const { nombre_grupo, password } = banda;
-    
+
     useEffect(() => {
         limpiarErrores();
     }, []);
