@@ -43,7 +43,7 @@ const Formulario_CrearCancion = (props) => {
         if (!user?.suscripcion_real) return false;
         const fecha = new Date(user.suscripcion_real.fecha_suscripcion);
         const dias = (new Date() - fecha) / (1000 * 60 * 60 * 24);
-        return user.suscripcion_real.estado === "activo" && dias <= 30;
+        return user.suscripcion_real.estado === "activa" && dias <= 30;
     };
 
     const contarCanciones = (user) => {

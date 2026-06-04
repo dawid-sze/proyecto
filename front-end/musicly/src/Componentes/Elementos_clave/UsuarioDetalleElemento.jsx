@@ -10,7 +10,7 @@ const UsuarioDetalleElemento = ({ datos }) => {
     const { logOut } = useContext(AuthContext);
     const navigate = useNavigate();
     const [mostrarEditar, setMostrarEditar] = useState(false);
-
+    console.log(datos)
     const esPremium = datos.suscripcion_real?.estado === "activa";
 
     return (
