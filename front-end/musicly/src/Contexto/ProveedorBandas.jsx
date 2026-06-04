@@ -302,6 +302,7 @@ const ProveedorBandas = (props) => {
             }
     }
 
+    const limpiarErrores = () => setErrores([]);
     //DISTINTOS USEEFFECT PARA INICIARLIUZAR LAS FUNCIÓNES 
     useEffect(() => {
         if (user && !initialized) {
@@ -381,7 +382,8 @@ const ProveedorBandas = (props) => {
         estadisticas,
         crearComentario,
         activarTarjeta,
-        desactivarTarjeta
+        desactivarTarjeta,
+        limpiarErrores
     };
 
     return (

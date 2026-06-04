@@ -4,9 +4,12 @@ import './formularios.css';
 
 const FormularioModificacion = (props) => {
     const [banda, setBanda] = useState(props.bandaModificar);
-    const { errores, modificarUsuario } = useContext(contextoListado);
+    const { errores, modificarUsuario, limpiarErrores } = useContext(contextoListado);
     const { nombre_grupo, password } = banda;
-
+    
+    useEffect(() => {
+        limpiarErrores();
+    }, []);
     const actualizarDato = (evento) => {
         const { name, value, type, files } = evento.target;
         if (type === "file") {

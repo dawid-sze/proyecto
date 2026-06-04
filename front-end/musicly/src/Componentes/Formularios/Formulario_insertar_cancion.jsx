@@ -11,10 +11,14 @@ const Formulario_CrearCancion = (props) => {
     };
 
     const [cancion, setCancion] = useState(cancionInicial);
-    const { registrarCancion, errores } = useContext(contextoListado);
+    const { registrarCancion, errores, limpiarErrores } = useContext(contextoListado);
     const { user } = useContext(AuthContext);
     const nombreCancionRef = useRef(null);
     const archivoCancionRef = useRef(null);
+
+    useEffect(() => {
+        limpiarErrores();
+    }, []);
 
     const actualizarDato = (evento) => {
         const { name, value, files } = evento.target;

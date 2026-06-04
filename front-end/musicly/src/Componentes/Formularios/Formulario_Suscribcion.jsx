@@ -9,13 +9,16 @@ const CrearSuscripcion = () => {
     const suscripcionInicial = { numero_tarjeta: "", fecha_caducidad: "", cvv: "" };
     const [suscripcion, setSuscripcion] = useState(suscripcionInicial);
     const [procesando, setProcesando] = useState(false);
-    const { activarSuscripcion, activarTarjeta, desactivarTarjeta, errores } = useContext(contextoListado);
+    const { activarSuscripcion, activarTarjeta, desactivarTarjeta, errores, limpiarErrores } = useContext(contextoListado);
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const currentUser = user?.[0] || user;
     const tarjetas = currentUser?.tarjetas || [];
 
+    useEffect(() => {
+        limpiarErrores();
+    }, []);
     const actualizarDato = (e) => {
         const { name, value } = e.target;
         setSuscripcion({ ...suscripcion, [name]: value });

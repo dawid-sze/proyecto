@@ -10,8 +10,10 @@ const FormularioCreacion = () => {
         password: "", email: "", avatar: "", id_pais: ""
     };
     const [banda, setBanda] = useState(bandaInicial);
-    const { registrarUsuario, errores, paises } = useContext(contextoListado);
-
+    const { registrarUsuario, errores, paises, limpiarErrores } = useContext(contextoListado);
+    useEffect(() => {
+        limpiarErrores();
+    }, []);
     const actualizarDato = (evento) => {
         const { name, value, files } = evento.target;
         if (name === "avatar") {

@@ -11,9 +11,13 @@ const Formulario_CrearDisco = (props) => {
     };
 
     const [disco, setDisco] = useState(discoInicial);
-    const { registrarDisco, errores, generos } = useContext(contextoListado);
+    const { registrarDisco, errores, generos, limpiarErrores } = useContext(contextoListado);
     const nombreDiscoRef = useRef(null);
     const portadaDiscoRef = useRef(null);
+
+     useEffect(() => {
+        limpiarErrores();
+    }, []);
 
     const actualizarDato = (evento) => {
         const { name, value, files } = evento.target;
