@@ -5,10 +5,10 @@ import "./reproductor.css";
 import { contextoListado } from "../../Contexto/ProveedorBandas";
 import sin_portada from "../../assets/imagenes/sin_portada.jpg";
 
-const Reproductor = ({ cancionActual, alTerminar, genero }) => {
+const Reproductor = ({ cancionActual, alTerminar, genero, portada }) => {
   const { reproduccionesUsuario, reproduccionesCancion } = useContext(contextoListado);
   const idRegistrado = useRef(null);
-
+  console.log(cancionActual)
   useEffect(() => {
     if (!cancionActual || !cancionActual.id || cancionActual.id === idRegistrado.current) return;
     reproduccionesUsuario(genero);
@@ -21,7 +21,7 @@ const Reproductor = ({ cancionActual, alTerminar, genero }) => {
 
       <div className="reproductor-portada-wrap">
         <img
-          src={cancionActual?.disco?.portada || cancionActual?.portada || sin_portada}
+          src={cancionActual?.disco?.portada || cancionActual?.portada || portada }
           alt="Portada"
           className="reproductor-portada"
         />

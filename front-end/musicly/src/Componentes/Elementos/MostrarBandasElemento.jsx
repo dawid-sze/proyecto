@@ -6,7 +6,6 @@ import "./MostrarBandaElemento.css";
 const MostrarBandaElemento = ({ idBanda, onPlay }) => {
     const { listado } = useContext(contextoListado);
     const [pagina, setPagina] = useState(0);
-
     const banda = listado?.find(b => b.id == idBanda);
 
     if (!banda) {

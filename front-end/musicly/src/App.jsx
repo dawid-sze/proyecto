@@ -7,8 +7,8 @@ import { ProveedorBandas } from "./Contexto/ProveedorBandas.jsx"
 import { Navegacion } from "./Componentes/Estructura/Navegacion.jsx"
 import { AuthProvider } from "./Contexto/ProveedorAutentificacion.jsx"
 import { Reproductor } from './Componentes/Estructura/Reprductor.jsx';
-
-function AppContent({ reproducirLista, colaActual, indiceActual, siguienteCancion, genero }) {
+import sin_portada from "./assets/imagenes/sin_portada.jpg";
+function AppContent({ reproducirLista, colaActual, indiceActual, siguienteCancion, genero, portada }) {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -37,6 +37,7 @@ function AppContent({ reproducirLista, colaActual, indiceActual, siguienteCancio
             cancionActual={colaActual[indiceActual]}
             alTerminar={siguienteCancion}
             genero={genero}
+            portada = {portada}
           />
         )}
       </div>
@@ -49,11 +50,12 @@ function App() {
   const [colaActual, setColaActual] = useState([]);
   const [indiceActual, setIndiceActual] = useState(0);
   const [genero, setGenero] = useState([]);
-
-  const reproducirLista = (lista, index, genero) => {
+  const [portada, setPortada] = useState(sin_portada);
+  const reproducirLista = (lista, index, genero, portada) => {
     setColaActual(lista);
     setIndiceActual(index);
     setGenero(genero);
+    setPortada(portada)
   };
 
   const siguienteCancion = () => {
@@ -72,6 +74,7 @@ function App() {
             indiceActual={indiceActual}
             siguienteCancion={siguienteCancion}
             genero={genero}
+            portada = {portada}
           />
         </ProveedorBandas>
       </AuthProvider>
