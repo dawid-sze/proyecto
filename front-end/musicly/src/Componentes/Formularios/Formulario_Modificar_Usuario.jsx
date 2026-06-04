@@ -84,6 +84,7 @@ const FormularioModificacion = (props) => {
 
                         <div style={{ marginTop: "0.5rem" }}>
                             <button
+                                type="button"
                                 className="btn-editar"
                                 onClick={() => {
                                     const banda_final = bandaToFormData(banda);

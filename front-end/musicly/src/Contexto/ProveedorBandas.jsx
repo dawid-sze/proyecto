@@ -262,7 +262,7 @@ const ProveedorBandas = (props) => {
             if (!datos.errors) {
                 let usaurio = await obtenerUsuario(token)
                 setUser(usaurio)
-                navegar(`/inicio`);
+                navegar(`/`);
                 inicializarListado();
             } else {
                 setErrores(datos.errors)
