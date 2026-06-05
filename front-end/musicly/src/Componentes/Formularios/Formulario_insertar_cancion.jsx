@@ -99,7 +99,7 @@ const Formulario_CrearCancion = (props) => {
                             </label>
 
                             <span className="error">{errores.cancion}</span>
-                        </div>v>
+                        </div>
 
                         <div className="form-row">
                             <label>Disco</label>
