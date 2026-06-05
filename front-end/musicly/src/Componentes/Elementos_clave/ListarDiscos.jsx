@@ -35,7 +35,7 @@ const ListarDiscos = () => {
 
                                     <button
                                         className="btn-delete small"
-                                        onClick={() => {confirm("¿Desea eliminar este grupo?") && deleteDisco(disco.id)}}
+                                        onClick={() => {confirm("¿Desea eliminar este disco?") && deleteDisco(disco.id)}}
                                     >
                                         ✕
                                     </button>
