@@ -39,7 +39,7 @@ const Formulario_CrearLista = () => {
                 <div>
                     <input
                         type="button"
-                        value="Guardar Lista"
+                        value="Crear Lista"
                         onClick={() => {
                            registrarLista(lista)
                         }}

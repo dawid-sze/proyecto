@@ -1,4 +1,4 @@
-import React, { Fragment, useRef, useState, useContext, useEffect  } from "react";
+import React, { Fragment, useRef, useState, useContext, useEffect } from "react";
 import { contextoListado } from "../../Contexto/ProveedorBandas.jsx";
 import { AuthContext } from "../../Contexto/ProveedorAutentificacion.jsx";
 import './formularios.css';
@@ -78,17 +78,28 @@ const Formulario_CrearCancion = (props) => {
                             />
                             <span className="error">{errores.nombre_cancion}</span>
                         </div>
-
                         <div className="form-row">
-                            <label>Archivo de la canción</label>
-                            <input
-                                ref={archivoCancionRef}
-                                type="file"
-                                name="cancion"
-                                onChange={actualizarDato}
-                            />
+                            <label htmlFor="cancion">Archivo de la canción</label>
+
+                            <label className="file-label">
+                                <input
+                                    ref={archivoCancionRef}
+                                    type="file"
+                                    name="cancion"
+                                    onChange={actualizarDato}
+                                    style={{ display: "none" }}
+                                />
+
+                                <span className="file-btn">
+                                    <i className="ti ti-upload" aria-hidden="true"></i>
+                                    {cancion.cancion
+                                        ? cancion.cancion.name
+                                        : "Seleccionar archivo"}
+                                </span>
+                            </label>
+
                             <span className="error">{errores.cancion}</span>
-                        </div>
+                        </div>v>
 
                         <div className="form-row">
                             <label>Disco</label>
@@ -124,7 +135,7 @@ const Formulario_CrearCancion = (props) => {
                                         return;
                                     }
                                     const cancion_final = cancionToFormData(cancion);
-                                        registrarCancion(cancion_final);
+                                    registrarCancion(cancion_final);
                                 }}
                             />
                             <input
